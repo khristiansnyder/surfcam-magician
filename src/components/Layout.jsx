@@ -7,15 +7,22 @@ import Search from "./Search";
 const Layout = ({ favorites, children }) => {
   return (
     <>
-      {/* ... (Previous code for header and sections) */}
-      
+      <section
+        className="section"
+        style={{
+          background: "linear-gradient(to right bottom, #00c1ff, #141f27)",
+        }}
+      >
+        <div className="container">
+          <h1 className="title has-text-white">KS Surf Cams 2.0</h1>
+          <h2 className="subtitle has-text-light">Pull in!</h2>
+        </div>
+      </section>
       <section className="section">
         <div className="container is-fluid">
           <Favorites favorites={favorites} />
         </div>
       </section>
-
-      {/* Add buttons with links here */}
       <section className="section">
         <div className="container is-fluid">
           <div className="buttons">
@@ -58,8 +65,21 @@ const Layout = ({ favorites, children }) => {
           </div>
         </div>
       </section>
-
-      {/* ... (Previous code for Search and footer) */}
+      <section className="section">
+        <div className="container is-fluid">
+          {children}
+        </div>
+      </section>
+      <section className="section">
+        <div className="container is-fluid">
+          <Search />
+        </div>
+      </section>
+      <footer className="footer">
+        <div className="content has-text-centered">
+          <p>Shred on</p>
+        </div>
+      </footer>
     </>
   );
 };
