@@ -10,7 +10,7 @@ const Layout = ({ favorites, children }) => {
       <section
         className="section"
         style={{
-          background: linear-gradient(to right bottom, #00c1ff, #141f27);
+          background: "linear-gradient(to right bottom, #00c1ff, #141f27)";
 }
         }}
       >
