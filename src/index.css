@@ -5,3 +5,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@media print, screen and (min-width: 769px){
+.columns:not(.is-desktop) {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(64px, 100%/2)), 1fr));
+}
+}
