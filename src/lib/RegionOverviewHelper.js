@@ -42,18 +42,13 @@ export default class RegionOverviewHelper {
 
   // Rewrite URL to local call
   // To end up with this ["/wsc-west/wc-venturapointcam.stream/playlist.m3u8"]
-parseStreamUrls(regionOverview) {
-  // First, get all cameras from all spots
-  const allCameras = regionOverview.data.spots
-    .flatMap(spot => spot.cameras);
-  
-  // Then process the stream URLs
-  return allCameras
-    .map(camera => camera.streamUrl)
-    .map(streamUrl => 
-      streamUrl.replace("https://cams.cdn-surfline.com", "")
-    );
-}
+  parseStreamUrls(regionOverview) {
+    return regionOverview.cameras
+      .map((camera) => camera.streamUrl)
+      .map((streamUrl) =>
+        streamUrl.replace("https://cams.cdn-surfline.com", "")
+      );
+  }
 
   processRegionOverview(regionOverview) {
     return regionOverview.data.spots.map((spot) => {
